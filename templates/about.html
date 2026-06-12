@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - CoffeeBucks{% endblock %}
+
+{% block content %}
+<section class="about-sections">
+    <h2 class="about-title">About Us</h2>
+    <p class="about-description"> At CoffeeBucks, we are passionate about delivering
+        the finest coffee experience to our customers. Our journey began with a simple 
+        idea: to create a welcoming space where coffee lovers can come together 
+        and enjoy exceptional brews. We source our beans from the best coffee-growing 
+        regions around the world, ensuring that every cup we serve is rich in 
+        flavor and aroma. Our skilled baristas are dedicated to crafting each 
+        drink with care and precision, using traditional brewing methods and 
+        innovative techniques. Whether you're looking for a classic espresso, a 
+        creamy latte, or a refreshing iced coffee, CoffeeBucks is your go-to destination for 
+        quality and taste. Join us on this caffeinated adventure and discover your new 
+        favorite brew!
+    </p>
+</section>
+<style>
+    .about-sections {
+        background-image: url("{{ url_for('static', filename='img/coffeebeans.jpg')}}");
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+    }
+</style>
+<section class="about-slideshow">
+    <h2 class="about-title">Our Journey</h2>
+    <p> Coming soon...</p>
+</section>
+<style>
+    .about-title h2 {
+        font-size: 50px;
+    }
+</style>
+
+{% endblock %}
