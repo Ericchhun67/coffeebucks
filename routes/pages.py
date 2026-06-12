@@ -31,3 +31,8 @@ def orders():
 @pages_bp.route('/edit_orders')
 def edit_orders():
     return render_template('edit_orders.html')
+
+
+@pages_bp.route('/locations')
+def locations():
+    return render_template('locations.html')
