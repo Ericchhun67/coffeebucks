@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Home - CoffeeBucks{% endblock %}
+
+{% block content %}
+<!-- site content body -->
+<section class="hero-section">
+    <h2>Welcome to CoffeeBucks!</h2>
+    <p>Discover the best coffee in town</p>
+    <div class="pic-container">
+        <a href="{{ url_for('pages.orders') }}" class="order-now-btn">Order Now</a>
+        
+    </div>
+</section>
+
+<div class="container">
+    <style>
+        .hero-section {
+            width: 100%;
+            min-width: 20px;
+            min-height: 420px;
+            padding: 56px 20px;
+            text-align: center;
+            background-image: url("{{ url_for('static', filename='img/coffeebeans.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+
+        }
+        .hero-section h2 {
+            font-size: 70px;
+            color: #05070b;
+            margin-bottom: 16px;
+            /* need notes on display: inline-block */
+            display: inline-block;
+            text-shadow: 4px 4px 4px rgba(10, 239, 167, 0.5);
+        }
+        .hero-section p {
+            font-size: 45px;
+            color: #f6f5f5;
+        }
+    </style>
+    <!-- featured drinks section -->
+    <div class="card-container">
+        <h4>Featured Drinks</h4>
+        <section class="menu-card menu-card1">
+            <img src="{{ url_for('static', filename='img/coffee1.jpg') }}" alt="Iced Coffee" class="menu-image menu-image1">
+            <!-- description container -->
+            <section class="menu-description-container menu-description-container1">
+                <span class="menu-title">Iced Coffee</span>
+                <p class="menu-description">A refreshing blend of coffee, milk, and ice.</p>
+                <!-- add to cart -->
+                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+            </section>
+        </section>
+        <!-- featured drinks  -->
+        <section class="menu-card menu-card2">
+            <img src="{{ url_for('static', filename='img/coffee2.jpg') }}" alt="Latte" class="menu-image menu-image2">
+            <section class="menu-description-container menu-description-container2">
+                <span class="menu-title">Latte</span>
+                <p class="menu-description">A creamy combination of espresso and steamed milk.</p>
+                <!-- add to cart -->
+                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+            </section>
+        </section>
+        <!-- featured drinks  -->
+        <section class="menu-card menu-card3">
+            <img src="{{ url_for('static', filename='img/coffee3.jpg') }}" alt="Mocha" class="menu-image menu-image3">
+            <section class="menu-description-container menu-description-container3">
+                <span class="menu-title">Mocha</span>
+                <p class="menu-description">A delightful blend of chocolate, espresso, and steamed milk .</p>
+                <!-- add to cart -->
+                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+            </section>
+        </section>
+        <!-- featured drinks  -->
+        <section class="menu-card menu-card4">
+            <img src="{{ url_for('static', filename='img/coffee4.jpg') }}" alt="Cappuccino" class="menu-image menu-image4">
+            <section class="menu-description-container menu-description-container4">
+                <span class="menu-title">Cappuccino</span>
+                <p class="menu-description">A perfect balance of espresso, steamed milk, and foam.</p>
+                <!-- add to cart -->
+                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+            </section>
+        </section>
+    </div>
+
+    <!-- special offers section -->
+    <div class="special-offers">
+        <h5>Special Offers</h5>
+        <p>Enjoy our exclusive deals and discounts on your favorite coffee drinks!</p>
+        <div class="special-offers-grid">
+            <section class="special-offer-card">
+                <img src="{{ url_for('static', filename='img/coffee5.jpg') }}" alt="Special Offers" class="special-offers-image">
+                <span class="pumpkin-spice-description">Try our limited-time Pumpkin Spice Latte, a perfect blend of espresso, steamed milk, and pumpkin spice flavor.</span>
+            </section>
+            <section class="special-offer-card">
+                <img src="{{ url_for('static', filename='img/coffee6.jpg') }}" alt="Special Offers" class="special-offers-image">
+                <span class="matcha-latte-description">Indulge in our Matcha Latte, a creamy and vibrant green tea latte made with high-quality matcha powder and steamed milk.</span>
+            </section>
+        </div>
+        <a href="{{ url_for('pages.orders') }}" class="show-offers-btn">Show Offers</a>
+    </div>
+    <!-- reviews section card -->
+    <div class="reviews-section">
+        <h5>Customer Reviews</h5>
+        <p>See what our customers are saying about us!</p>
+        <section class="review-card review-card1">
+            <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Customer 1" class="review-avatar review-avatar1">
+            <span class="review-name">Emily R.</span>
+            <p class="review-text">"The best coffee I've ever had! The atmosphere is cozy and the staff is friendly."</p>
+        </section>
+        <section class="review-card review-card2">
+            <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Customer 2" class="review-avatar review-avatar2">
+            <span class="review-name">Michael S.</span>
+            <p class="review-text">"I love the variety of drinks they offer. The iced coffee is my favorite!"</p>
+        </section>
+        <section class="review-card review-card3">
+            <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Customer 3" class="review-avatar review-avatar3">
+            <span class="review-name">Sophia L.</span>
+            <p class="review-text">"The perfect place to relax and enjoy a cup of coffee. Highly recommend!"</p>
+        </section>
+    </div>
+
+{% endblock %}

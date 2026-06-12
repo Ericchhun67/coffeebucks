@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CoffeeBucks{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- site header container -->
+    <header class="site-container">
+        <!-- site header title -->
+        <h1 class="header-title">☕️ CoffeeBucks</h1>
+        <style>
+            .site-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                flex-wrap: wrap;
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: #0cdf75;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%; 
+            }
+            .header-title {
+                font-size: 24px;
+                text-shadow: 3px 3px 3px rgba(207, 16, 16, 0.5);
+                color: #05070b;
+                align-items: center;
+                display: inline-flex;
+                justify-content: center;
+                gap: 67px;
+                position: relative;
+                left: 30px;
+
+            }
+            body {
+                background-color: #f0f5f1;
+                margin: 0;
+                /* Fixed header sits on top of the page, so reserve space under it. */
+                padding-top: 58px;
+            }
+            
+        </style>
+        <!-- site navigation -->
+        <nav class="right-nav"> 
+            <a class="home" href="{{ url_for('pages.index') }}">Home</a>
+            <a class="menu" href="{{ url_for('menu.menu') }}">Menu</a>
+            <a class="about" href="{{ url_for('pages.about') }}">About Us</a>
+            <a class="favorites" href="{{ url_for('favorite.favorites') }}">Favorites</a>
+            <a class="contact" href="{{ url_for('pages.contact') }}">Contact</a>
+            <a class="orders" href="{{ url_for('pages.orders') }}">Orders</a>
+            <a class="login" href="{{ url_for('auth.login') }}">
+            <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Login"></a>
+            <span class="login-title">login</span>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer-container">
+        <p>&copy; 2024 CoffeeBucks. All rights reserved.</p>
+        <style>
+            .footer-container {
+                text-align: center;
+                background-color: #0cdf75;
+                color: #05070b;
+                width: 100%;
+                padding: 12px 0;
+                margin-top: 80px;
+            }
+        </style>
+    </footer>
+</body>
+</html>

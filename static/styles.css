@@ -1,0 +1,374 @@
+.right-nav {
+
+    position: relative;
+    right: 50px;
+    gap: 16px;
+    display: flex;
+    /* need notes on align-items:center */
+    align-items: center;
+}
+
+
+#nav-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.special-offers {
+    /* add a border box */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Use margin for spacing so this section does not overlap nearby content. */
+    margin-top: 80px;
+    padding: 40px 48px 0;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.special-offers h5 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 24px;
+    padding: 0 16px;
+}
+
+
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    justify-content: center;
+    gap: 24px;
+    margin-top: 100px;
+}
+
+.card-container h4 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 16px;
+}
+
+.menu-card {
+    width: 300px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-image {
+    width: 100%;
+    height: 240px;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-image:hover {
+    transform: scale(1.05);
+    box-shadow: 9px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-title {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.menu-description {
+    min-height: 48px;
+    margin: 16px 0;
+    line-height: 1.35;
+}
+
+
+.order-now-btn {
+    background-color: #6f4e37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+
+.order-now-btn:hover {
+    background-color: #5a3e2b;
+    box-shadow: 9px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.home {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.home:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+
+
+.menu {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.menu:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+.about {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.about:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+
+.favorites {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.favorites:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+.contact {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.contact:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+
+.orders {
+    background-color: transparent;
+    color: #6f4e37;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.orders:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+
+.login-title {
+    text-align: center;
+    font-size: 15px;
+    align-items: center;
+}
+
+
+.add-to-cart-btn {
+    background-color: #6f4e37;
+    color: rgb(14, 3, 3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+    margin-top: auto;
+    box-shadow: 9px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.add-to-cart-btn:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+    }
+}
+
+
+
+.menu-description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin-top: 16px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-description-container p {
+    color: brown;
+    font-size: 16px;
+}
+
+
+
+.special-offers-grid {
+    /* Two equal columns keep the offer images aligned horizontally. */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    gap: 16px;
+    align-items: start;
+    max-width: 1100px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.special-offer-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.special-offers-image {
+    width: 100%;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+.special-offer-card span {
+    min-height: 48px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.special-offer-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    background-color: rgba(244, 12, 12, 0.9);
+}
+
+.show-offers-btn {
+    /* move the button to the bottom of the special offers section */
+    display: block;
+    margin: 16px auto 0;
+    background-color: #6f4e37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.show-offers-btn:hover {
+    background-color: #5a3e2b;
+    color: white;
+}
+
+
+.reviews-section {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.review-card {
+    display: inline-block;
+    width: 300px;
+    padding: 16px;
+    margin: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    background-color: rgba(244, 12, 12, 0.9);
+}
+
+
+.pumpkin-spice-description {
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    font-style: italic;
+    color: #6f4e37;
+}
+
+.matcha-latte-description {
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    font-style: italic;
+    color: #6f4e37;
+}
+
+@media (max-width: 1000px) {
+    .special-offers {
+        padding: 32px 20px 0;
+    }
+
+    .special-offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
