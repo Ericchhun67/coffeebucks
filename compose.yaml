@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      # Keep your local code connected so edits show up while learning Docker.
+      - .:/app
+      # Keep the SQLite database outside the image so it survives rebuilds.
+      - coffeebucks-instance:/app/instance
+    command: flask --app app:create_app --debug run --host=0.0.0.0 --port=5000
+
+volumes:
+  coffeebucks-instance:
