@@ -9,7 +9,7 @@
     <p>Discover the best coffee in town</p>
     <div class="pic-container">
         <a href="{{ url_for('pages.orders') }}" class="order-now-btn">Order Now</a>
-        
+        <a href="{{ url_for('pages.locations') }}" class="location-btn">Find Us- coming soon</a>
     </div>
 </section>
 
@@ -116,6 +116,7 @@
         <section class="review-card review-card1">
             <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Customer 1" class="review-avatar review-avatar1">
             <span class="review-name">Emily R.</span>
+            <!-- add ratings stars -->
             <p class="review-text">"The best coffee I've ever had! The atmosphere is cozy and the staff is friendly."</p>
         </section>
         <section class="review-card review-card2">
@@ -138,7 +139,11 @@
             <span class="review-name">John D.</span>
             <p class="review-text">"A fantastic place for coffee lovers. The ambiance is perfect for working or relaxing."</p>
         </section>
-
+        <section class="review-card review-card6">
+            <img src="{{ url_for('static', filename='img/avatar.png')}}" alt="Customer 6" class="review-avatar review-avatar6">
+            <span class="review-name">David M.</span>
+            <p class="review-text">"Great coffee and friendly staff. I always enjoy my visits here."</p>
+        </section>
     </div>
 
 {% endblock %}
