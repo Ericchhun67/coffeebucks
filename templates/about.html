@@ -5,7 +5,7 @@
 {% block content %}
 <section class="about-sections">
     <h2 class="about-title">About Us</h2>
-    <p class="about-description"> At CoffeeBucks, we are passionate about delivering
+    <!-- <p class="about-description"> At CoffeeBucks, we are passionate about delivering
         the finest coffee experience to our customers. Our journey began with a simple 
         idea: to create a welcoming space where coffee lovers can come together 
         and enjoy exceptional brews. We source our beans from the best coffee-growing 
@@ -16,12 +16,12 @@
         creamy latte, or a refreshing iced coffee, CoffeeBucks is your go-to destination for 
         quality and taste. Join us on this caffeinated adventure and discover your new 
         favorite brew!
-    </p>
+    </p> -->
 </section>
 <style>
     .about-sections {
         background-image: url("{{ url_for('static', filename='img/coffeebeans.jpg')}}");
-        min-height: 400px;
+        min-height: 80px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -47,6 +47,22 @@
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 </style>
+<section class="status-bar">
+    <!-- store worldwide, countries, partners, years of coffee. no use of api -->
+     <div class="store-world">
+        
+     </div>
+    
+</section>
+<style>
+    .status-bar {
+        background-color:darkgreen;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+    }
+</style>
+<!-- about our journey section  -->
 <section class="about-slideshow">
     <h2 class="about-title">Our Journey</h2>
     <p> Coming soon...</p>
@@ -63,7 +79,7 @@
 </section>
 <style>
     .our-mission-section {
-        background-color: rgb(166, 164, 164);
+        background-color: lightgrey;
         min-height: 400px;
     }
 </style>
