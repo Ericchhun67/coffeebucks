@@ -82,22 +82,87 @@
 <!-- about our journey section  -->
 <section class="about-slideshow">
     <h2 class="about-title">Our Journey</h2>
-    <p> Coming soon...</p>
+    <!-- slideshow content will go here and it will feature images and descriptions of our journey
+     and a dot navigation for the slideshow. 
+    -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="{{ url_for('static', filename='img/our-journey1.jpg')}}" alt="Our Journey 1" style="width:100%">
+            <div class="slide-description">Our humble beginnings in a small coffee shop.</div>
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='img/our-journey2.jpg')}}" alt="Our Journey 2" style="width:100%">
+            <div class="slide-description">Expanding our reach to new locations.</div>
+        </div>
+    </div>
+    <script>
+        // JavaScript for slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
 </section>
 <style>
     .about-title h2 {
         font-size: 50px;
     }
+    .slideshow-container {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .slide {
+        display: none;
+        position: relative;
+    }
+    .slide-description {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        color: white;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 8px;
+        border-radius: 4px;
+    }
 </style>
 <!-- about our shop cards: Craft & Quality, Community & Connection, Sustainability & Responsibility, our team -->
 <section class="our-mission-section">
-    <h2 class="about-title">Our Mission</h2>
-    <p> Coming soon...</p>
+    <div class="mission-card">
+        <h2 class="about-title">Our Mission</h2>
+        <p>At CoffeeBucks, our mission is to create a welcoming space where 
+        coffee lovers can come together and enjoy exceptional 
+        brews. We are committed to sourcing our beans from the best 
+        coffee-growing regions around the world, ensuring that every cup 
+        we serve is rich in flavor and aroma. Our skilled baristas are 
+        dedicated to crafting each drink with care and precision, 
+        using traditional brewing methods and innovative techniques. 
+    </div>
 </section>
 <style>
     .our-mission-section {
         background-color: lightgrey;
         min-height: 400px;
+    }
+    .mission-card {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
     }
 </style>
 <!-- shop photos section -->
