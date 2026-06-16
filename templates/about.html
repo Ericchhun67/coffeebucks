@@ -21,7 +21,7 @@
 <style>
     .about-sections {
         background-image: url("{{ url_for('static', filename='img/coffeebeans.jpg')}}");
-        min-height: 400px;
+        min-height: 80px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -34,14 +34,225 @@
         font-family: 'Arial', sans-serif;
         font-size: 18px;
     }
+
+    .about-title {
+        text-shadow: 4px 4px 4px rgba(10, 239, 167, 0.5);
+        color: #05070b;
+        font-size: 50px;
+    }
+
+    .about-description {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 </style>
+<section class="status-bar">
+    <!-- store worldwide, countries, partners, years of coffee. no use of api -->
+     <div class="store-world">
+        <h3>Stores Worldwide</h3>
+        <p>500+</p>
+     </div>
+        <div class="countries">
+            <h3>Countries</h3>
+            <p>30+</p>
+        </div>
+        <div class="partners">
+            <h3>Partners</h3>
+            <p>100+</p>
+        </div>
+        <div class="years-of-coffee">
+            <h3>Years of Coffee</h3>
+            <p>20+</p>
+        </div>
+</section>
+<style>
+    .status-bar {
+        background-color:darkgreen;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+    }
+    .status-bar div {
+        flex: 1;
+        text-align: center;
+        color: white;
+    }
+</style>
+<!-- about our journey section  -->
 <section class="about-slideshow">
     <h2 class="about-title">Our Journey</h2>
-    <p> Coming soon...</p>
+    <!-- slideshow content will go here and it will feature images and descriptions of our journey
+     and a dot navigation for the slideshow. 
+    -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="{{ url_for('static', filename='img/our-journey1.jpg')}}" alt="Our Journey 1" style="width:100%">
+            <div class="slide-description">Our humble beginnings in a small coffee shop.</div>
+        </div>
+        <div class="slide slide2">
+            <img src="{{ url_for('static', filename='img/our-journey2.jpg')}}" alt="Our Journey 2" style="width:500px; height: 300px;">
+            <div class="slide-description">Expanding our reach to new locations.</div>
+        </div>
+    </div>
+    <script>
+        // JavaScript for slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 6000); // Change image every 3 seconds
+        }
+    </script>
 </section>
 <style>
     .about-title h2 {
         font-size: 50px;
+    }
+    .slideshow-container {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .slide {
+        display: none;
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+    }
+    .slide-description {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        color: white;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 8px;
+        border-radius: 4px;
+    }
+</style>
+<!-- about our shop cards: Craft & Quality, Community & Connection, Sustainability & Responsibility, our team -->
+<section class="our-mission-section">
+    <div class="mission-card">
+        <h2 class="about-title">Our Mission</h2>
+        <p>At CoffeeBucks, our mission is to create a welcoming space where 
+        coffee lovers can come together and enjoy exceptional 
+        brews. We are committed to sourcing our beans from the best 
+        coffee-growing regions around the world, ensuring that every cup 
+        we serve is rich in flavor and aroma. Our skilled baristas are 
+        dedicated to crafting each drink with care and precision, 
+        using traditional brewing methods and innovative techniques. 
+    </div>
+    <div class="Craft-Quality-card">
+        <h3>Craft & Quality</h3>
+        <p>We are passionate about delivering the finest coffee experience to our customers. 
+            We source our beans from the best coffee-growing regions around the world, 
+            ensuring that every cup we serve is rich in flavor and aroma. 
+            Our skilled baristas are dedicated to crafting each drink with 
+            care and precision, using traditional brewing methods and 
+            innovative techniques.</p>
+    </div>
+    <div class="Community-connection">
+        <h3>Community & Connection</h3>
+        <p>We believe in fostering a sense of community and connection among our customers. 
+            Our coffee shops are designed to be welcoming spaces where people can come together, 
+            share ideas, and enjoy great coffee. We host events, workshops, and gatherings to 
+            bring our community closer and create meaningful connections.</p>
+    </div>
+</section>
+<style>
+    .our-mission-section {
+        background-color: lightgrey;
+        min-height: 300px;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .mission-card {
+        max-width: 300px;
+        margin: auto;
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+    }
+    .mission-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+
+    .Craft-Quality-card {
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+    }
+    .Craft-Quality-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+    .Community-connection {
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+    }
+    .Community-connection:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+</style>
+<!-- shop photos section -->
+<section class="Our-shop-photo">
+    <h2 class="about-title">Our Shop Photos</h2>
+    <!-- A few photos of our shop will be displayed here and the description of each photo -->
+    <div class="coffee-shop-photo">
+        <!-- photo 1 -->
+        <img src="{{ url_for('static', filename='img/our-shop1.jpg')}}" alt="Our Shop 1" style="width:100%">
+        <div class="photo-description">Our cozy and inviting coffee shop interior.</div>
+        <!-- photo 2 -->
+        <img src="{{ url_for('static', filename='img/our-shop2.jpg')}}" alt="Our Shop 2" style="width:100%">
+        <div class="photo-description">Our baristas crafting the perfect cup of coffee.</div>
+        <!-- photo 3 -->
+        <img src="{{ url_for('static', filename='img/our-shop3.jpg')}}" alt="Our Shop 3" style="width:100%">
+        <div class="photo-description">Our outdoor seating area, perfect for enjoying your coffee.</div>
+
+        <img src="{{ url_for('static', filename='img/our-shop4.jpg')}}" alt="Our Shop 4" style="width:100%">
+        <div class="photo-description">Our vibrant and welcoming atmosphere.</div>
+
+        <img src="{{ url_for('static', filename='img/our-shop5.jpg')}}" alt="Our Shop 5" style="width:100%">
+        <div class="photo-description">Our delicious coffee and pastries on display.</div>
+
+        <img src="{{ url_for('static', filename='img/our-shop6.jpg')}}" alt="Our Shop 6" style="width:100%">
+        <div class="photo-description">Our friendly staff ready to serve you.</div>
+
+    </div>
+</section>
+<style>
+    .Our-shop-photo {
+        background-color:bisque;
+        min-height: 400px;
     }
 </style>
 
