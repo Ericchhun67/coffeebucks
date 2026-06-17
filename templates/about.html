@@ -253,6 +253,32 @@
     .Our-shop-photo {
         background-color:bisque;
         min-height: 400px;
+        padding: 40px 20px;
+    }
+    .coffee-shop-photo {
+        /* align images in a grid */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .coffee-shop-photo img {
+        max-width: 300px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .photo-description {
+        /* move text below the image */
+        text-align: center;
+        margin-top: 5px;
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+    } 
+    .coffee-shop-photo img:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 </style>
 
