@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}About Us - CoffeeBucks{% endblock %}
+{% block title %}About Us - Good Days Coffee{% endblock %}
 
 {% block content %}
 <section class="about-sections">
     <h2 class="about-title">About Us</h2>
-    <p class="about-description"> At CoffeeBucks, we are passionate about delivering
+    <p class="about-description"> At Good Days Coffee, we are passionate about delivering
         the finest coffee experience to our customers. Our journey began with a simple 
         idea: to create a welcoming space where coffee lovers can come together 
         and enjoy exceptional brews. We source our beans from the best coffee-growing 
@@ -13,7 +13,7 @@
         flavor and aroma. Our skilled baristas are dedicated to crafting each 
         drink with care and precision, using traditional brewing methods and 
         innovative techniques. Whether you're looking for a classic espresso, a 
-        creamy latte, or a refreshing iced coffee, CoffeeBucks is your go-to destination for 
+        creamy latte, or a refreshing iced coffee, Good Days Coffee is your go-to destination for 
         quality and taste. Join us on this caffeinated adventure and discover your new 
         favorite brew!
     </p>
@@ -81,7 +81,7 @@
 </style>
 <!-- about our journey section  -->
 <section class="about-slideshow">
-    <h2 class="about-title">Our Journey</h2>
+    <h2 class="about-title">Our Journey - need to fix</h2>
     <!-- slideshow content will go here and it will feature images and descriptions of our journey
      and a dot navigation for the slideshow. 
     -->
@@ -246,13 +246,38 @@
 
         <img src="{{ url_for('static', filename='img/our-shop6.jpg')}}" alt="Our Shop 6" style="width:100%">
         <div class="photo-description">Our friendly staff ready to serve you.</div>
-
     </div>
 </section>
 <style>
     .Our-shop-photo {
         background-color:bisque;
         min-height: 400px;
+        padding: 40px 20px;
+    }
+    .coffee-shop-photo {
+        /* align images in a grid */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .coffee-shop-photo img {
+        max-width: 300px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .photo-description {
+        /* move text below the image */
+        text-align: center;
+        margin-top: 5px;
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+    } 
+    .coffee-shop-photo img:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 </style>
 
