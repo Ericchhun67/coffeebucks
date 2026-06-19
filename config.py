@@ -1,4 +1,8 @@
+""" 
+date: may 31, 2026
+purpose: This file defines the configuration settings for the Good Days Coffee
 
+"""
 
 
 
