@@ -1,3 +1,10 @@
+<!-- 
+Date: June-8-2026
+base.html
+Purpose: Base template for the Good Days Coffee application.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +17,11 @@
 <body>
     <!-- site header container -->
     <header class="site-container">
-        <!-- site header title -->
-        <h1 class="header-title">☕️ Good Days Coffee</h1>
+        <!-- Keep the logo and title together as one header item. -->
+        <div class="site-brand">
+            <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Good Days Coffee Logo">
+            <h1 class="header-title">Good Days Coffee</h1>
+        </div>
         <style>
             .site-container {
                 display: flex;
@@ -26,17 +36,22 @@
                 left: 0;
                 width: 100%; 
             }
+            .site-brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-left: 40px;
+            }
             .header-title {
                 font-size: 24px;
                 text-shadow: 3px 3px 3px rgba(207, 16, 16, 0.5);
                 color: #05070b;
-                align-items: center;
-                display: inline-flex;
-                justify-content: center;
-                gap: 67px;
-                position: relative;
-                left: 30px;
-
+                margin: 0;
+            }
+            .logo {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
             }
             body {
                 background-color: #f0f5f1;
@@ -53,7 +68,7 @@
             <a class="about" href="{{ url_for('pages.about') }}">About Us</a>
             <a class="favorites" href="{{ url_for('favorite.favorites') }}">Favorites</a>
             <a class="contact" href="{{ url_for('pages.contact') }}">Contact</a>
-            <a class="orders" href="{{ url_for('pages.orders') }}">Orders</a>
+            <a class="orders" href="{{ url_for('orders.get_all_orders') }}">Orders</a>
             <a class="login" href="{{ url_for('auth.login') }}">
             <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Login"></a>
             <span class="login-title">login</span>
@@ -62,7 +77,7 @@
     {% block content %}
     {% endblock %}
     <footer class="footer-container">
-        <p>&copy; 2024 Good Days Coffee. All rights reserved.</p>
+        <p>&copy; 2026 Good Days Coffee. All rights reserved.</p>
         <style>
             .footer-container {
                 text-align: center;
@@ -70,7 +85,10 @@
                 color: #05070b;
                 width: 100%;
                 padding: 12px 0;
-                margin-top: 80px;
+                margin-top: 0;
+            }
+            .footer-container p {
+                margin: 0;
             }
         </style>
     </footer>
