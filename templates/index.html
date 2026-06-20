@@ -1,3 +1,10 @@
+<!-- 
+ june 9, 2026
+ purpose: This file defines the HTML template for the home page of the Good Days Coffee website.
+
+-->
+
+
 {% extends "base.html" %}
 
 {% block title %}Home - Good Days Coffee{% endblock %}
@@ -7,8 +14,19 @@
 <section class="hero-section">
     <h2>Welcome to Good Days Coffee!</h2>
     <p>Discover the best coffee in town</p>
+    <!-- add the current time  -->
+    <h5>Current Time:</h5>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('current-time').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+    <p id="current-time"></p>
     <div class="pic-container">
-        <a href="{{ url_for('pages.orders') }}" class="order-now-btn">Order Now</a>
+        <a href="{{ url_for('orders.get_all_orders') }}" class="order-now-btn">Order Now</a>
         <a href="{{ url_for('pages.locations') }}" class="location-btn">Find Us- coming soon</a>
     </div>
 </section>
@@ -26,6 +44,18 @@
             background-position: center;
             background-repeat: no-repeat;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #current-time {
+            font-size: 24px;
+            color: #f6f5f5;
+            margin-top: 16px;
+            /* add a border card */
+            border: 2px solid #f6f5f5;
+            border-radius: 8px;
+            padding: 8px;
+            display: inline-block;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
         }
 
         .container {
@@ -58,7 +88,7 @@
                 <span class="menu-title">Iced Coffee</span>
                 <p class="menu-description">A refreshing blend of coffee, milk, and ice.</p>
                 <!-- add to cart -->
-                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+                <a href="{{ url_for('orders.get_all_orders') }}" class="add-to-cart-btn">Add to Cart</a>
             </section>
         </section>
         <!-- featured drinks  -->
@@ -68,7 +98,7 @@
                 <span class="menu-title">Latte</span>
                 <p class="menu-description">A creamy combination of espresso and steamed milk.</p>
                 <!-- add to cart -->
-                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+                <a href="{{ url_for('orders.get_all_orders') }}" class="add-to-cart-btn">Add to Cart</a>
             </section>
         </section>
         <!-- featured drinks  -->
@@ -78,7 +108,7 @@
                 <span class="menu-title">Mocha</span>
                 <p class="menu-description">A delightful blend of chocolate, espresso, and steamed milk .</p>
                 <!-- add to cart -->
-                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+                <a href="{{ url_for('orders.get_all_orders') }}" class="add-to-cart-btn">Add to Cart</a>
             </section>
         </section>
         <!-- featured drinks  -->
@@ -88,7 +118,7 @@
                 <span class="menu-title">Cappuccino</span>
                 <p class="menu-description">A perfect balance of espresso, steamed milk, and foam.</p>
                 <!-- add to cart -->
-                <a href="{{ url_for('pages.orders') }}" class="add-to-cart-btn">Add to Cart</a>
+                <a href="{{ url_for('orders.get_all_orders') }}" class="add-to-cart-btn">Add to Cart</a>
             </section>
         </section>
     </div>
@@ -106,7 +136,7 @@
                 <span class="matcha-latte-description">Indulge in our Matcha Latte, a creamy and vibrant green tea latte made with high-quality matcha powder and steamed milk.</span>
             </section>
         </div>
-        <a href="{{ url_for('pages.orders') }}" class="show-offers-btn">Show Offers</a>
+        <a href="{{ url_for('orders.get_all_orders') }}" class="show-offers-btn">Show Offers</a>
     </div>
     <!-- reviews section card -->
     <div class="reviews-section">
@@ -144,5 +174,6 @@
             <p class="review-text">"Great coffee and friendly staff. I always enjoy my visits here."</p>
         </section>
     </div>
+</div>
 
 {% endblock %}
