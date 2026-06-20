@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Good Days Coffee{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+
+</section>
+<style>
+    .contact-section {
+        width: 100%;
+        min-width: 20px;
+        min-height: 420px;
+        padding: 56px 20px;
+        text-align: center;
+        background-image: url("{{ url_for('static', filename='img/contactus.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-section h2 {
+        font-size: 70px;
+        color: #05070b;
+        margin-bottom: 16px;
+        /* need notes on display: inline-block */
+        display: inline-block;
+        text-shadow: 4px 4px 4px rgba(10, 239, 167, 0.5);
+    }
+    .contact-section p {
+        font-size: 45px;
+        color: #f6f5f5;
+    }
+</style>
+
+<!-- social media links can be added here -->
+<section class="social-media-section">
+    <h2>Connect with Us</h2>
+    <p>Follow us on social media for the latest updates and promotions!</p>
+    <!-- social media icons and links can be added here -->
+</section>
+{% endblock %}

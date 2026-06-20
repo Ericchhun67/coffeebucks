@@ -1,8 +1,17 @@
+""" 
+Date: June-7-2026
+favorite_items.py
+Purpose: Model for favorite items in the Good Days Coffee application.
+
+"""
+
+
 from flask import Blueprint, render_template
 from extensions import db
 from models.menu_items import MenuItem
 from models.favorite_items import FavoriteItem
 
+# Blueprint for handling favorite item page routes
 favorite_bp = Blueprint('favorite', __name__)
 
 
