@@ -17,6 +17,7 @@ from routes.auth import auth_bp
 from routes.pages import pages_bp
 from routes.menu_page import menu_bp
 from routes.favorite_item_page import favorite_bp
+from routes.orders_items import orders_bp
 
 app = Flask(__name__) # Initialize the Flask application
 app.config.from_object(Config) # Load configuration settings from the Config
@@ -34,6 +35,7 @@ def create_app() -> None:
     app.register_blueprint(auth_bp)
     app.register_blueprint(menu_bp)
     app.register_blueprint(favorite_bp)
+    app.register_blueprint(orders_bp)
 
     # Create database tables if they don't exist
     with app.app_context():
