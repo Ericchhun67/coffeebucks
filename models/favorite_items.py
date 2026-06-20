@@ -1,10 +1,12 @@
+""" 
+Date: June-7-2026
+favorite_items.py
+Purpose: Model for favorite items in the Good Days Coffee application.
+
+"""
+
 from flask_sqlalchemy import SQLAlchemy
 from extensions import db
-
-
-
-
-
 
 
 
